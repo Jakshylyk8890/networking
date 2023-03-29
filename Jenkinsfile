@@ -42,4 +42,13 @@ stages {
             }
         }
     }
+    post {
+	
+       success {
+           emailext to: "jakshylyk.ashyrmamatov@gmail.com",
+            subject: "Sended by Jakshylyk",
+            body: "FROM Jenkins",
+            attachLog: true
+		    }
+    }
 }
