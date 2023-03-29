@@ -1,5 +1,5 @@
 pipeline {
-    agent docker
+    agent { label 'terraform' }
 //     tools {
 //         terraform 'terraform'
 //         }
