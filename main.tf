@@ -1,4 +1,6 @@
-
+provider "aws" {
+  region = "us-east-1"
+}
 // ✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏𝐂𝐑𝐄𝐀𝐓𝐄 𝐕𝐏𝐂﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏
 resource "aws_vpc" "jeks" {
       cidr_block = var.vpc_cidr
