@@ -32,7 +32,7 @@ stages {
         }
         stage('Terraform Destroy') {
             steps {
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'cloud1-aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY', region:'us-east-1']]) 
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'cloud1-aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) 
                 {
                 
                 sh 'terraform destroy --auto-approve'
