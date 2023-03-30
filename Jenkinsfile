@@ -25,13 +25,13 @@ stages {
             }
         stage('Terraform Apply') {
             steps {
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'cloud1-aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) 
-                
 		    timeout(time: 15, unit: "MINUTES") {
 	                    input message: 'Do you want to approve the Terraform apply?', ok: 'Yes'
 	                }
 			
 	                echo "Initiating deployment"
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'cloud1-aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) 
+		    
 		    {
                 
                 sh 'terraform apply --auto-approve'
